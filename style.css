@@ -1,0 +1,29 @@
+* {
+    PADDING:0 ; 
+    margin:0 ; 
+    /* color:pink ;  */
+}
+body {
+    height:100vh ; 
+    width: 100vw;
+    overflow-x: hidden;
+}
+.imagecontainer {
+    border:1px solid black ; 
+    width:30vw ; 
+    margin-left: 35vw;
+    height:30vw ; 
+}
+.imagecontainer img {
+    height:100% ; 
+    width:100% ; 
+    background-color: whitesmoke;
+}
+button{
+    width:7.5vw ; 
+    height:8vh ; 
+    margin:2px ; 
+    background-color: rgb(0, 255, 42);
+    border:0 ; 
+    font-size:3vh ; 
+}
