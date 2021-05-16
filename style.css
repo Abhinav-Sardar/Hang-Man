@@ -19,24 +19,30 @@ body {
     width:100% ; 
     background-color: whitesmoke;
 }
-button{
+.button{
     width:7.5vw ; 
     height:8vh ; 
     margin:2px ; 
     background-color: rgb(0, 255, 42);
     border:0 ; 
     font-size:3vh ; 
+    cursor:pointer ; 
 }
 .letter {
     border-bottom:1px solid black ; 
-    border-left:1px solid black ; 
-    border-right:1px solid black ; 
-
-    width:10vw ; 
-    heightvh ;  ; 
+    /* border-left:1px solid black ;  */
+    /* border-right:1px solid black ;  */
+    width:10vw ;
     display: inline-block;
     margin:0 10px ; 
     font-size:4rem ; 
     padding-top:5vh ; 
+    height:2vh ; 
+}
+#restart {
+    padding:15px ; 
+    color:white ; 
+    border: 0;
+    background-color: brown;
 
 }
