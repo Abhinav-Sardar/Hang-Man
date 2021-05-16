@@ -8,8 +8,8 @@
 
 [] CSS
 [] Code Stages of HangMan
-[]Big array of words
-[]]Select Random word every round
+[x]Big array of words
+[x]Select Random word every round
 []Ablity to restart the game
 
 

@@ -27,3 +27,16 @@ button{
     border:0 ; 
     font-size:3vh ; 
 }
+.letter {
+    border-bottom:1px solid black ; 
+    border-left:1px solid black ; 
+    border-right:1px solid black ; 
+
+    width:10vw ; 
+    height:12vh ;  ; 
+    display: inline-block;
+    margin:0 10px ; 
+    font-size:4rem ; 
+    padding-top:5vh ; 
+
+}
