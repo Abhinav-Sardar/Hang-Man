@@ -3,11 +3,11 @@ let words = 'Apple Banana Lake Night Dumpling Scam Prize Lotus Computer Desktop 
 let currentImageIndex = 0 ; 
 let divs = document.getElementsByClassName('letter') ; 
 let image = document.getElementById('img') ; 
-const ImageArray = ['./Images/Initial.png' , './Images/Head.png' , './Images/Body.png' , './Images/RightHand.png' , './Images/LeftHand.png' , './Images/LeftLeg.png' , './Images/RightLeg.png'] ; 
+const ImageArray = ['./Images/Initial.png' , './Images/Head.png' , './Images/Body.png' , './Images/RightHand.png' , './Images/LeftHand.png' , './Images/RightLeg.png' , './Images/LeftLeg.png'] ; 
 
 let wordArray = words.split(' ') ; 
 let word = "" ; 
-let splitWord = "" ;
+let splitWord:string ; 
 let buttonContainer:HTMLElement|null = document.getElementById('buttons')! ; 
 let divContainer:HTMLElement|null= document.getElementById('wordCont') ; 
 let alphabets = "abcdefghijklmnopqrstuvwxyz".toUpperCase() ; 
@@ -88,6 +88,18 @@ function ReplaceButtonText(splittedWord:string, character:string ){
 
 }
 
-setInterval(() => {
-   
+let intervalSetter = setInterval(() => {
+    if(currentImageIndex === 6){
+        image?.setAttribute('src' , ImageArray[6]) ; 
+        alert('You have lost the game!') ; 
+        document.querySelectorAll('button').forEach(button => button.setAttribute('disabled' , 'disabled')) ; 
+        clearInterval(intervalSetter)
+    }
+    else if(splitWord === ''){
+        alert('You have guessed the word!') ; 
+        clearInterval(intervalSetter)
+    }
+    else {
+        image?.setAttribute('src' , ImageArray[currentImageIndex])
+    }
 }) ;
