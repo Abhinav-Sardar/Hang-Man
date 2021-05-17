@@ -36,6 +36,7 @@ const setWord:() => void = () => {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded' , () => {
     setButtons() ; 
     setWord() ; 
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded' , () => {
 
 
 
-let ButtonClick:(btton:HTMLButtonElement) => void =  (button:HTMLButtonElement) => {
+let ButtonClick:(button:HTMLButtonElement) => void =  (button:HTMLButtonElement) => {
     let btnText = button.innerText ; 
     if(splitWord.includes(btnText)){
         splitWord = ReplaceButtonText(splitWord , btnText) ; 
@@ -95,7 +96,7 @@ let intervalSetter = setInterval(() => {
     if(currentImageIndex === 6){
         image?.setAttribute('src' , ImageArray[6]) ; 
         alert(`You have lost the game! The word was ${word}`) ; 
-        document.querySelectorAll('button').forEach(button => button.setAttribute('disabled' , 'disabled')) ; 
+        document.querySelectorAll('.button').forEach(button => button.setAttribute('disabled' , 'disabled')) ; 
         clearInterval(intervalSetter)
     }
     else if(splitWord === ''){
