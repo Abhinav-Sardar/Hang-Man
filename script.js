@@ -1,5 +1,7 @@
 "use strict";
-let words = 'Apple Banana Lake Night Dumpling Scam Prize Lotus Computer Desktop Laptop Doctor Roll Cross Cream Cash Fish Trace Candy Chocolate Dimple Campaign Cookie Defence Protection Trees Beauty Scroll Shoes Fuss Trumpet Butter Ice Sauce Guitar Keyboard Bird Tiger Lion Tongue Spear Spare Cactus Mountain God Chicken zebra violin dog skin shelter food ear lungs ball bat cucumber lolipop star tractor plank log treat'.toUpperCase();
+let words = 'Apple Banana Lake Night Dumpling Scam Prize Lotus Computer Desktop Laptop Doctor Roll Cross Cream Cash Fish Trace Candy Chocolate Dimple Campaign Cookie Defence Protection Trees Beauty Scroll Shoes Fuss Trumpet Butter Ice Sauce Guitar Keyboard Bird Tiger Lion Tongue Spear Spare Cactus Mountain God Chicken zebra violin dog skin shelter food ear lungs ball bat cucumber lolipop star tractor plank log treat mind talk tall face parrot teeth'.toUpperCase();
+let SuccessSound = new Audio('./Sounds/SucessSound.mp3');
+let ErrorSound = new Audio('./Sounds/ErrorSound.mp3');
 let currentImageIndex = 0;
 let divs = document.getElementsByClassName('letter');
 let image = document.getElementById('img');
@@ -87,11 +89,13 @@ let intervalSetter = setInterval(() => {
         alert(`You have lost the game! The word was ${word}`);
         document.querySelectorAll('.button').forEach(button => button.setAttribute('disabled', 'disabled'));
         clearInterval(intervalSetter);
+        ErrorSound.play();
     }
     else if (splitWord === '') {
         alert('You have guessed the word!');
-        document.querySelectorAll('button').forEach(button => button.setAttribute('disabled', 'disabled'));
+        document.querySelectorAll('.button').forEach(button => button.setAttribute('disabled', 'disabled'));
         clearInterval(intervalSetter);
+        SuccessSound.play();
     }
     else {
         image === null || image === void 0 ? void 0 : image.setAttribute('src', ImageArray[currentImageIndex]);
@@ -115,13 +119,15 @@ function SetGame() {
         if (currentImageIndex === 6) {
             image === null || image === void 0 ? void 0 : image.setAttribute('src', ImageArray[6]);
             alert(`You have lost the game! The word was ${word}`);
-            document.querySelectorAll('button').forEach(button => button.setAttribute('disabled', 'disabled'));
+            document.querySelectorAll('.button').forEach(button => button.setAttribute('disabled', 'disabled'));
             clearInterval(intervalSetter);
+            ErrorSound.play();
         }
         else if (splitWord === '') {
             alert('You have guessed the word!');
-            document.querySelectorAll('button').forEach(button => button.setAttribute('disabled', 'disabled'));
+            document.querySelectorAll('.button').forEach(button => button.setAttribute('disabled', 'disabled'));
             clearInterval(intervalSetter);
+            SuccessSound.play();
         }
         else {
             image === null || image === void 0 ? void 0 : image.setAttribute('src', ImageArray[currentImageIndex]);
